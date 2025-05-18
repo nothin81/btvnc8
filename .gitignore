@@ -1,2 +1,3 @@
 # built binaries and cmake folder
 build/
+build_ninja/
