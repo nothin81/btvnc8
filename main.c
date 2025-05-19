@@ -16,7 +16,8 @@ void nhapLieu(sinhVien SV[99], int n){
         printf("\nNhap vao ho va ten cua sinh vien thu %d: ", i+1);
         getchar();  //loai new line identifier trong buffer stdin cho fgets()
         fgets(SV[i].hoTen, sizeof(SV[i].hoTen), stdin);
-        
+        SV[i].hoTen[strcspn(SV[i].hoTen, "\n")] = 0;    //loai bo khoang new line phia sau. //fflush(stdin) gan giong voi endl() trong CXX
+
         printf("Nhap vao nam sinh cua sinh vien thu %d: ", i+1);
         scanf("%d", &SV[i].namSinh);
 
@@ -39,17 +40,17 @@ void tinhToanDiem(sinhVien SV[99], int n){
 void sapXepDS(sinhVien SV[99], int n){
     //an cap tu bai truoc
     int i, j;
-    float temp1;
+    sinhVien temp1;
     for (i = 0; i <= n-1; i++) {
         for (j = i+1; j < n; j++){
         if (SV[i].dTK < SV[j].dTK) {
-            temp1 = SV[i].dTK;
-            SV[i].dTK = SV[j].dTK;
-            SV[j].dTK = temp1;
+            temp1 = SV[i];
+            SV[i] = SV[j];
+            SV[j] = temp1;
             }
         }
     };
-    //note 
+    //note : gan cho temp de di chuyen toan bo struct.
 }
 
 void DSHeader(sinhVien SV[99], int n){
@@ -59,7 +60,7 @@ void DSHeader(sinhVien SV[99], int n){
     printf("\n|=====+================================+========+=======|");
     for (int i = 0; i < n; i++)
     {
-        printf("\n| %3d | %s |  %5.1f   |  %5.1f  |", i+1, SV[i].hoTen, SV[i].dT, SV[i].dTK);
+        printf("\n| %3d | %-30s |   %3.1f  |  %3.1f  |", i+1, SV[i].hoTen, SV[i].dT, SV[i].dTK);    //-30 de loai bo khoang trang.
     };
     printf("\n+-------------------------------------------------------+");
 }
