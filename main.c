@@ -74,6 +74,10 @@ int main(){
     tinhToanDiem(svien, n);
     printf("\nBan da nhap vao danh sach sau day: ");
     DSHeader(svien, n);
+        
+    printf("\n> Ban co muon in ra bang da sap xep (y/N)? ");
+    /* feature ask usr*/
+    
     printf("\n\n");
     sapXepDS(svien, n);
     DSHeader(svien, n);     
