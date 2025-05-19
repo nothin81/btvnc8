@@ -22,7 +22,6 @@ void nhapLieu(sinhVien SV[99], int n){
         scanf("%d", &SV[i].namSinh);
 
         printf("Moi nhap gioi tinh cua sinh vien (0: Nam, 1: Nu) : ");
-        printf("Moi nhap gioi tinh cua sinh vien (0: Nam, 1: Nu) : ");
         scanf("%d",&SV[i].gioiTinh);
 
         printf("Moi nhap DCC/DKT/DThi: ");
@@ -76,7 +75,7 @@ int main(){
     printf("\nBan da nhap vao danh sach sau day: ");
     DSHeader(svien, n);
         
-    printf("\n> Ban co muon in ra bang da sap xep (y/N)? ");
+    printf("\n=== Bang diem da duoc sap xep: ");
     /* feature ask usr*/
     
     printf("\n\n");
