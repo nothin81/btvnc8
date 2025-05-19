@@ -1,3 +1,4 @@
 # built binaries and cmake folder
+#changing origin to ssh
 build/
 build_ninja/
