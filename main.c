@@ -16,7 +16,7 @@ void nhapLieu(sinhVien SV[99], int n){
         printf("\nNhap vao ho va ten cua sinh vien thu %d: ", i+1);
         getchar();  //loai new line identifier trong buffer stdin cho fgets()
         fgets(SV[i].hoTen, sizeof(SV[i].hoTen), stdin);
-        //SV[i].hoTen[strcspn(SV[i].hoTen, "\n")] = 0;    //loai bo khoang new line phia sau.
+        SV[i].hoTen[strcspn(SV[i].hoTen, "\n")] = 0;    //loai bo khoang new line phia sau. //fflush(stdin) gan giong voi endl() trong CXX
 
         printf("Nhap vao nam sinh cua sinh vien thu %d: ", i+1);
         scanf("%d", &SV[i].namSinh);
@@ -59,7 +59,7 @@ void DSHeader(sinhVien SV[99], int n){
     printf("\n|=====+================================+========+=======|");
     for (int i = 0; i < n; i++)
     {
-        printf("\n| %3d | %-30s |  %5.1f   |  %5.1f  |", i+1, SV[i].hoTen, SV[i].dT, SV[i].dTK);    //-30 de loai bo khoang trang.
+        printf("\n| %3d | %-30s |   %3.1f  |  %3.1f  |", i+1, SV[i].hoTen, SV[i].dT, SV[i].dTK);    //-30 de loai bo khoang trang.
     };
     printf("\n+-------------------------------------------------------+");
 }
