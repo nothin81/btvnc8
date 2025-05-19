@@ -16,7 +16,7 @@ void nhapLieu(sinhVien SV[99], int n){
         printf("\nNhap vao ho va ten cua sinh vien thu %d: ", i+1);
         getchar();  //loai new line identifier trong buffer stdin cho fgets()
         fgets(SV[i].hoTen, sizeof(SV[i].hoTen), stdin);
-        SV[i].hoTen[strcspn(SV[i].hoTen, "\n")] = 0;    //loai bo khoang new line phia sau.
+        //SV[i].hoTen[strcspn(SV[i].hoTen, "\n")] = 0;    //loai bo khoang new line phia sau.
 
         printf("Nhap vao nam sinh cua sinh vien thu %d: ", i+1);
         scanf("%d", &SV[i].namSinh);
